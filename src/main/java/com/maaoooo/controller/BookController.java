@@ -26,14 +26,15 @@ public class BookController {
     //查询全部书籍，返回到一个书籍展示页面
 
     @RequestMapping("/allbook")
-    public String list(Model model){
-        List<Books> allBooks=bookService.queryAllBook();
-        model.addAttribute("allBooks",allBooks);
+    public String list(Model model) {
+        List<Books> allBooks = bookService.queryAllBook();
+        model.addAttribute("allBooks", allBooks);
         return "allbook";
     }
+
     //跳转到增加书籍页面
     @RequestMapping("/goAddPaper")
-    public String goAddPaper(){
+    public String goAddPaper() {
         return "addbook";
     }
 }
