@@ -19,12 +19,15 @@
         update ssmbuild.books set bookName=#{bookName},bookCounts=#{bookCounts},detail=#{detail} where bookID=#{bookID}
     </update>
     <!--    //查询一本书-->
-    <select id="queryBookById" parameterType="int">
+    <select id="queryBookById" parameterType="int" resultType="Books">
         select * from ssmbuild.books where bookID=#{bookID}
     </select>
     <!--    //查询全部的书-->
     <select id="queryAllBook" resultType="Books">
         select * from ssmbuild.books
     </select>
-    <!--    //查询全部的书-->
+<!--    //根据名字查询书籍  Books queryBookByName(String name);-->
+    <select id="queryBookByName" resultType="Books" parameterType="String">
+        select * from ssmbuild.books where bookName like concat('%',#{bookName},'%')
+    </select>
 </mapper>

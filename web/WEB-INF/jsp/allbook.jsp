@@ -31,7 +31,22 @@
 
 <div>
     <div class="col-md-4 column">
-        <a href="${pageContext.request.contextPath}/book/goAddPaper">增加书籍</a>
+        <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/goAddPaper">增加书籍</a>
+        <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/allbook">显示所有书籍</a>
+    </div>
+</div>
+
+<div class="col-md-4 column">
+
+</div>
+
+<div>
+    <div class="col-md-4 column">
+<%--        查询书籍--%>
+        <form action="${pageContext.request.contextPath}/book/queryByName" method="post">
+            <input type="text" name="queryBookName" class="form-inline" placeholder="请输入要查询的书籍名称">
+            <input type="submit" value="查询" class="btn-navbar">
+        </form>
     </div>
 </div>
 
@@ -44,21 +59,30 @@
                 <th>书籍名称</th>
                 <th>书籍数量</th>
                 <th>书籍详情</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
-<%--            书籍从数据库中获取 然后从list中遍历 用forEach标签--%>
-                <c:forEach var="book" items="${allBooks}">
-                    <tr>
-                        <td>${book.bookID}</td>
-                        <td>${book.bookName}</td>
-                        <td>${book.bookCounts}</td>
-                        <td>${book.detail}</td>
-                    </tr>
-                </c:forEach>
+            <%--            书籍从数据库中获取 然后从list中遍历 用forEach标签--%>
+            <c:forEach var="book" items="${allBooks}">
+                <tr>
+                    <td>${book.bookID}</td>
+                    <td>${book.bookName}</td>
+                    <td>${book.bookCounts}</td>
+                    <td>${book.detail}</td>
+                    <td>
+                        <a href="${pageContext.request.contextPath}/book/toUpdatePager?id=${book.bookID}">修改</a> |
+                        <a href="${pageContext.request.contextPath}/book/todeletePage?id=${book.bookID}">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
 </div>
+
+
+
+
 </body>
 </html>

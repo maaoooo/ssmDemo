@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="ssmbuild:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/ssmbuild_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="ssmbuild/web/Web" />
+      <element id="javaee-facet-resources" facet="ssmDemo/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="ssmbuild" />
+          <element id="module-output" name="ssmDemo" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.22" />
