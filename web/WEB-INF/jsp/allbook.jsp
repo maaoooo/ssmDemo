@@ -37,7 +37,7 @@
 </div>
 
 <div class="col-md-4 column">
-
+    <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/goUploadPage">上传书籍</a>
 </div>
 
 <div>

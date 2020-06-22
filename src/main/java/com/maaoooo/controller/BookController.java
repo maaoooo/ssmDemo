@@ -104,4 +104,15 @@ public class BookController {
         model.addAttribute("allBooks", booksList);
         return "allbook";
     }
+    //跳转到上传页面
+    @RequestMapping("/goUploadPage")
+    public String goUploadPage(){
+        return "upload";
+    }
+    //上传
+    @RequestMapping("/upload")
+    public String upload(){
+
+        return "redirect:/book/allbook";
+    }
 }
